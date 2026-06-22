@@ -1,0 +1,136 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #1a1c1c;
+  
+  --primary: #000000;
+  --secondary: #5e5e5e;
+  --outline: #7e7576;
+  --outline-variant: #cfc4c5;
+  --surface-container-lowest: #ffffff;
+  --surface-container-low: #f3f3f3;
+  --surface-container: #eeeeee;
+  --surface-container-high: #e8e8e8;
+  --surface-container-highest: #e2e2e2;
+  --error: #ba1a1a;
+  
+  --on-primary: #ffffff;
+  --surface: #ffffff;
+  --on-surface: #1a1c1c;
+  
+  --radius-default: 0.125rem; /* 2px */
+  --radius-lg: 0.25rem; /* 4px */
+  --radius-xl: 0.5rem; /* 8px */
+  --radius-full: 9999px;
+  
+  --spacing-gutter: 24px;
+  --spacing-margin-mobile: 16px;
+  --spacing-margin-desktop: 64px;
+  --spacing-stack-sm: 8px;
+  --spacing-stack-md: 16px;
+  --spacing-stack-lg: 32px;
+}
+
+@theme {
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-outline-custom: var(--outline);
+  --color-outline-variant: var(--outline-variant);
+  --color-surface-container-lowest: var(--surface-container-lowest);
+  --color-surface-container-low: var(--surface-container-low);
+  --color-surface-container: var(--surface-container);
+  --color-surface-container-high: var(--surface-container-high);
+  --color-surface-container-highest: var(--surface-container-highest);
+  --color-error-custom: var(--error);
+  
+  --color-on-primary: var(--on-primary);
+  --color-surface: var(--surface);
+  --color-on-surface: var(--on-surface);
+  
+  --radius-default: var(--radius-default);
+  --radius-lg: var(--radius-lg);
+  --radius-xl: var(--radius-xl);
+  
+  --spacing-gutter: var(--spacing-gutter);
+  --spacing-margin-mobile: var(--spacing-margin-mobile);
+  --spacing-margin-desktop: var(--spacing-margin-desktop);
+  --spacing-stack-sm: var(--spacing-stack-sm);
+  --spacing-stack-md: var(--spacing-stack-md);
+  --spacing-stack-lg: var(--spacing-stack-lg);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), sans-serif;
+  min-height: max(884px, 100dvh);
+}
+
+/* Custom scrollbar for corporate aesthetic */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #1a1c1c;
+  border-radius: 0;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+/* Custom Typography Utilities */
+.text-display-lg { font-size: 3.5rem; line-height: 1; letter-spacing: -0.02em; }
+.font-display-lg { font-weight: 900; }
+.text-headline-lg { font-size: 2rem; line-height: 1.1; letter-spacing: -0.01em; }
+.font-headline-lg { font-weight: 800; }
+.text-headline-md { font-size: 1.25rem; line-height: 1.2; }
+.font-headline-md { font-weight: 700; }
+.text-body-lg { font-size: 1.125rem; line-height: 1.5; }
+.font-body-lg { font-weight: 400; }
+.text-body-md { font-size: 1rem; line-height: 1.5; }
+.font-body-md { font-weight: 400; }
+.text-label-md { font-size: 0.875rem; letter-spacing: 0.05em; text-transform: uppercase; }
+.font-label-md { font-weight: 700; }
+.text-mono-sm { font-size: 0.75rem; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; }
+.font-mono-sm { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-weight: 500; }
+
+.radar-grid {
+  stroke: #e2e2e2;
+  stroke-width: 1;
+  fill: none;
+}
+.radar-axis {
+  stroke: #cfc4c5;
+  stroke-width: 1;
+}
+.radar-area {
+  fill: rgba(0, 0, 0, 0.05);
+  stroke: #000000;
+  stroke-width: 2;
+}
+
+.upload-dashed {
+  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='%231A1C1CFF' stroke-width='1' stroke-dasharray='8%2c 8' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+}
+
+@layer utilities {
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 12px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: var(--outline-variant);
+    border-radius: 20px;
+    border: 3px solid var(--surface);
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background-color: var(--secondary);
+  }
+}
